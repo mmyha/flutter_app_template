@@ -16,7 +16,7 @@ permissions:
 jobs:
   push-back-diffs-if-needed:
     name: Push back diffs after resolving dependencies if needed
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
         with:

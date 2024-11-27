@@ -1,3 +1,4 @@
-# flutter_template_app
+# Flutter テンプレート
 
-A new Flutter project.
+- SDK、パッケージのバージョン自動管理
+- util、http ベースなどの管理（WIP）

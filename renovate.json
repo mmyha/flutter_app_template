@@ -1,13 +1,13 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "enabledManagers": ["pub"],
-  "labels": ["dependencies"],
-  "rangeStrategy": "pin"
-  "packageRules": [
-    {
-      "matchManagers": ["pub"],
-      "automerge": true
-    }
-  ],
-  "prConcurrentLimit": 4
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"enabledManagers": ["pub"],
+	"labels": ["dependencies"],
+	"rangeStrategy": "pin",
+	"packageRules": [
+		{
+			"matchManagers": ["pub"],
+			"automerge": true
+		}
+	],
+	"prConcurrentLimit": 4
 }

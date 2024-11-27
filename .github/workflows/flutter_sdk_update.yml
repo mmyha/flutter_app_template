@@ -1,0 +1,67 @@
+name: Flutter Upgrade and PR Creation
+
+on:
+  schedule:
+    - cron: "0 0 1,15 * *"
+
+jobs:
+  upgrade-flutter:
+    name: Update Flutter Stable SDK and Create PR
+    runs-on: ubuntu-latest
+
+    steps:
+      # リポジトリのチェックアウト
+      - uses: actions/checkout@v4
+
+      # Flutter のセットアップ
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: latest-stable # 常に最新の安定版を取得
+
+      # Flutter SDK のアップデート
+      - name: Upgrade Flutter to Latest Stable
+        run: |
+          flutter channel stable
+          flutter upgrade
+
+      - name: Resolve Dependencies
+        run: |
+          flutter pub get
+
+        # Flutter バージョンを取得
+      - name: Get Flutter Version
+        id: flutter_version
+        run: |
+          flutter --version > flutter_version.txt
+          cat flutter_version.txt
+        continue-on-error: true
+
+      # Git の設定
+      - name: Setup Git
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      # Flutter SDK の更新による変更をコミット
+      - name: Commit SDK update
+        run: |
+          git add .
+          git commit -m "build: update Flutter SDK to latest stable"
+
+      # プルリクエストを作成
+      - name: Create Pull Request
+        run: |
+          # PR タイトルと本文を定義
+          PR_TITLE="chore: update Flutter SDK"
+          PR_BODY="This PR updates the Flutter SDK to the latest stable version.\n\n\`\`\`flutter --version\`\`\`\n\n$(cat flutter_version.txt)\n\`\`\`"
+          # 新しいブランチ名を設定
+          BRANCH_NAME="update-flutter-sdk-$(date +'%Y%m%d%H%M%S')"
+          # 新しいブランチを作成
+          git checkout -b "$BRANCH_NAME"
+          git push origin "$BRANCH_NAME"
+          # プルリクエストを作成
+          gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base main --head "$BRANCH_NAME"
+          # プルリクエストを作成
+          gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base main --head ${{ github.head_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKE }}

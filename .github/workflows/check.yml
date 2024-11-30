@@ -1,0 +1,47 @@
+name: Flutter Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # リポジトリをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # `build.yaml`からSDKバージョンを取得
+      - name: Extract SDK version
+        id: extract_version
+        run: |
+          SDK_VERSION=$(awk '/environment:/,/sdk:/' pubspec.yaml | grep "sdk:" | awk '{print $2}' | tr -d '"')
+          echo "dart-sdk-version=$SDK_VERSION" >> $GITHUB_ENV
+        shell: bash
+
+      # Flutter SDKをセットアップ (Dart SDKバージョンからFlutterバージョンを推定)
+      - name: Install Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.sdk-version }}
+
+      # 依存関係をインストール
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Flutterテストを実行
+      - name: Run Flutter tests
+        run: flutter test
+
+      # format
+      - name: Run Flutter format
+        run: dart format lib --output=none --set-exit-if-changed
+
+      # analysis
+      - name: Run Flutter Analysis
+        run: flutter analyze
+
+

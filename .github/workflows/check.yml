@@ -32,6 +32,10 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      # widgetbookのビルド
+      - name: build widgetbook
+        run: cd widgetbook && flutter pub run build_runner build --delete-conflicting-outputs
+
       # Flutterテストを実行
       - name: Run Flutter tests
         run: flutter test

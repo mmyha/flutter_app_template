@@ -34,7 +34,13 @@ jobs:
 
       # widgetbookのビルド
       - name: build widgetbook
-        run: cd widgetbook && flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
+        run: |
+          if [ -d "widgetbook" ]; then
+            echo "widgetbook directory exists, building widgetbook..."
+            cd widgetbook && flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
+          else
+            echo "widgetbook directory does not exist, skipping build."
+          fi
 
       # Flutterテストを実行
       - name: Run Flutter tests

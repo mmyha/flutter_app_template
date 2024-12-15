@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_hooks: 0.20.5
-  fluttertoast: 8.2.8
+  fluttertoast: 8.2.10
   freezed: 2.5.7
   freezed_annotation: 2.4.4
   go_router: 14.6.2

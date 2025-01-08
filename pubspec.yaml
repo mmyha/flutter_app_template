@@ -28,7 +28,7 @@ dev_dependencies:
   mockito: 5.4.5
   pedantic_mono: "1.29.0"
   pubspec_dependency_sorter: "1.0.5"
-  retrofit_generator: 9.1.5
+  retrofit_generator: 9.1.7
   riverpod_generator: 2.6.3
 flutter:
   uses-material-design: true

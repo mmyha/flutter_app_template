@@ -29,6 +29,6 @@ dev_dependencies:
   pedantic_mono: "1.29.0"
   pubspec_dependency_sorter: "1.0.5"
   retrofit_generator: 9.1.7
-  riverpod_generator: 2.6.3
+  riverpod_generator: 2.6.4
 flutter:
   uses-material-design: true

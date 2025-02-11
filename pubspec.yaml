@@ -2,7 +2,7 @@ name: "flutter_template_app"
 version: 0.1.0
 publish_to: none
 environment:
-  sdk: "3.6.1"
+  sdk: "3.6.2"
 description: A new Flutter project.
 dependencies:
   dio: 5.8.0

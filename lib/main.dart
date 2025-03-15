@@ -12,11 +12,7 @@ Future<void> main() async {
 
   runApp(
     ProviderScope(
-      overrides: [
-        sharedPreferencesProvider.overrideWithValue(
-          prefs,
-        ),
-      ],
+      overrides: [sharedPreferencesProvider.overrideWithValue(prefs)],
       child: const MainApp(),
     ),
   );
@@ -28,9 +24,6 @@ class MainApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerProvider);
-    return MaterialApp.router(
-      routerConfig: router,
-      title: 'flutter app',
-    );
+    return MaterialApp.router(routerConfig: router, title: 'flutter app');
   }
 }

@@ -5,7 +5,7 @@ environment:
   sdk: "3.6.2"
 description: A new Flutter project.
 dependencies:
-  dio: 5.8.0
+  dio: 5.8.0+1
   flutter:
     sdk: flutter
   flutter_hooks: 0.20.5

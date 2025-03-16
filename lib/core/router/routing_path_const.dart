@@ -1,3 +1,3 @@
 class RoutingPathConst {
-  static const String initialPath = '/';
+  static const initialPath = '/';
 }

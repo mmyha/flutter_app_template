@@ -122,10 +122,10 @@ packages:
     dependency: transitive
     description:
       name: chalkdart
-      sha256: e7cfcc9a9d9546843304c1ff87fe0696c7eb82ee70e6df63f555f321b15a40d8
+      sha256: "7ffc6bd39c81453fb9ba8dbce042a9c960219b75ea1c07196a7fa41c2fab9e86"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.3"
+    version: "3.0.5"
   characters:
     dependency: transitive
     description:
@@ -304,10 +304,10 @@ packages:
     dependency: transitive
     description:
       name: freezed
-      sha256: "7ed2ddaa47524976d5f2aa91432a79da36a76969edd84170777ac5bea82d797c"
+      sha256: "6022db4c7bfa626841b2a10f34dd1e1b68e8f8f9650db6112dcdeeca45ca793c"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.4"
+    version: "3.0.6"
   freezed_annotation:
     dependency: "direct overridden"
     description:
@@ -336,10 +336,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: f02fd7d2a4dc512fec615529824fdd217fecb3a3d3de68360293a551f21634b3
+      sha256: "4cdfcc6a178632d1dbb7a728f8e84a1466211354704b9cdc03eee661d3277732"
       url: "https://pub.dev"
     source: hosted
-    version: "14.8.1"
+    version: "15.0.0"
   graphs:
     dependency: transitive
     description:
@@ -480,10 +480,10 @@ packages:
     dependency: transitive
     description:
       name: material_symbols_icons
-      sha256: "99d5b0e7c65232dfe1247e0ac67eeeee2cab9da2d860748fc495d34f5e9e6397"
+      sha256: d45b6c36c3effa8cb51b1afb8698107d5ff1f88fa4631428f34a8a01abc295d7
       url: "https://pub.dev"
     source: hosted
-    version: "4.2811.0"
+    version: "4.2815.0"
   meta:
     dependency: transitive
     description:
@@ -845,10 +845,10 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook_annotation
-      sha256: "21485481aff512177a4b12db78a3196c2eb32dee3580c7b7cb88789314856bcb"
+      sha256: "03274209fe93f32a2e548663a6fc671341804271980e2c65550e7f989c356fdf"
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.1"
+    version: "3.4.0"
   widgetbook_generator:
     dependency: "direct dev"
     description:
